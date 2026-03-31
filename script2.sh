@@ -13,13 +13,10 @@ echo " Checking FOSS Package: $PACKAGE"
 echo "=================================================="
 
 # Check if package is installed
-if command -v dpkg &>/dev/null && dpkg -l "$PACKAGE" &>/dev/null; then
+if command -v "$PACKAGE" &>/dev/null; then
     echo "[+] $PACKAGE is installed."
     # Extract version and description
-    dpkg -s "$PACKAGE" | grep -E 'Version|Description' | head -n 2
-elif command -v rpm &>/dev/null && rpm -q "$PACKAGE" &>/dev/null; then
-    echo "[+] $PACKAGE is installed."
-    rpm -qi "$PACKAGE" | grep -E 'Version|License|Summary'
+    "$PACKAGE" --version | head -n 1
 else
     echo "[-] $PACKAGE is NOT installed on this system."
 fi
@@ -28,26 +25,23 @@ echo "--------------------------------------------------"
 echo "FOSS Tool Philosophy:"
 # A case statement to print a short description of its purpose
 case $PACKAGE in
-    httpd|apache2) 
-        echo "Apache: The web server that built the open internet." 
-        ;;
-    mysql|mysql-server|mariadb-server) 
-        echo "MySQL/MariaDB: Open source at the heart of millions of dynamic web apps." 
-        ;;
-    git)
-        echo "Git: The tool Linus built when proprietary failed him - decentralizing modern software development."
-        ;;
-    vlc)
-        echo "VLC: A global media player born from a student project."
-        ;;
-    firefox)
-        echo "Firefox: A nonprofit championing an open, accessible web for everyone."
+    git) 
+        echo "Git: A distributed version control system designed for speed and data integrity."
         ;;
     python|python3)
-        echo "Python: A language shaped entirely by community."
+        echo "Python: An interpreted language that emphasizes code readability and community-led growth."
+        ;;
+    vlc)
+        echo "VLC: A cross-platform media solution that proved open-source can handle any codec."
+        ;;
+    firefox)
+        echo "Firefox: A browser built by a global community to keep the internet open and private."
+        ;;
+    gcc)
+        echo "GCC: The foundational compiler that allows the entire FOSS ecosystem to be built from source."
         ;;
     *)
-        echo "An open-source tool serving the greater FOSS ecosystem."
+        echo "An essential open-source utility supporting the FOSS ecosystem."
         ;;
 esac
 echo "=================================================="
