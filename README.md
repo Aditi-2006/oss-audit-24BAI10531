@@ -1,9 +1,11 @@
 # Open Source Audit - Git
 
-**Student Name:** Aditi
-**Registration Number:** 24BAI10531
-**Course:** Open Source Software(NGMC) 
-**Software Chosen:** Git  
+---
+
+* **Student Name:** Aditi
+* **Registration Number:** 24BAI10531
+* **Course:** Open Source Software(NGMC) 
+* **Software Chosen:** Git  
 
 ## Repository Overview
 This repository contains the shell scripts and resources required for the Open Source Audit Project, serving as a comprehensive capstone assignment for the OSS course. It features an in-depth audit of Git, analyzing its origins, licensing, FOSS ecosystem integration, and its footprint on a standard Linux system. 
